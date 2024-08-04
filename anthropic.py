@@ -3,7 +3,7 @@ from torch import nn
 from einops import *
 from torch.optim import Adam
 
-from sae.base import BaseSAE, Loss
+from base import BaseSAE, Loss
 
 
 class AnthropicSAE(BaseSAE):

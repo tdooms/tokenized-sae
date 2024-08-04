@@ -13,7 +13,7 @@ from vanilla import VanillaSAE
 from gated import GatedSAE
 from rainbow import RainbowSAE
 from anthropic import AnthropicSAE
-from open import OpenSAE
+from top import TopkSAE
 from base import BaseSAE
 
 # %%
@@ -38,7 +38,7 @@ config = Config(
 )
 
 sampler = Sampler(config, train, model)
-sae = OpenSAE(config, model)
+sae = TopkSAE(config, model)
 
 torch.backends.cudnn.benchmark = True
 sae.train(sampler, model, validation, log=True)
@@ -72,7 +72,7 @@ for k in [5]:
     )
 
     sampler = Sampler(config, train, model)
-    sae = OpenSAE(config, model)
+    sae = TopkSAE(config, model)
 
     torch.backends.cudnn.benchmark = True
     sae.train(sampler, model, validation, log=True)
@@ -106,7 +106,7 @@ for k in [5]:
     )
 
     sampler = Sampler(config, train, model)
-    sae = OpenSAE(config, model)
+    sae = TopkSAE(config, model)
 
     torch.backends.cudnn.benchmark = True
     sae.train(sampler, model, validation, log=True)
@@ -143,7 +143,7 @@ for lr in [0.01, 0.005, 0.001]:
     )
 
     sampler = Sampler(config, train, model)
-    sae = OpenSAE(config, model)
+    sae = TopkSAE(config, model)
 
     torch.backends.cudnn.benchmark = True
     sae.train(sampler, model, validation, log=True)
@@ -177,7 +177,7 @@ config = Config(
 )
 
 sampler = Sampler(config, train, model)
-sae = OpenSAE(config, model)
+sae = TopkSAE(config, model)
 
 torch.backends.cudnn.benchmark = True
 sae.train(sampler, model, validation, log=True)
@@ -207,7 +207,7 @@ for k in [50]:
     )
 
     sampler = Sampler(config, train, model)
-    sae = OpenSAE(config, model)
+    sae = TopkSAE(config, model)
 
     torch.backends.cudnn.benchmark = True
     sae.train(sampler, model, validation, log=True)
@@ -235,7 +235,7 @@ for k in [50, 30]:
     )
 
     sampler = Sampler(config, train, model)
-    sae = OpenSAE(config, model)
+    sae = TopkSAE(config, model)
 
     torch.backends.cudnn.benchmark = True
     sae.train(sampler, model, validation, log=True)
@@ -268,7 +268,7 @@ for i, j in zip([16, 17, 18], [1_000, 500, 250]):
     )
 
     sampler = Sampler(config, train, model)
-    sae = OpenSAE(config, model)
+    sae = TopkSAE(config, model)
 
     torch.backends.cudnn.benchmark = True
     sae.train(sampler, model, validation, log=True)
@@ -301,7 +301,7 @@ for i in [0.0, 0.1, 0.2, 0.3, 0.4]:
     )
 
     sampler = Sampler(config, train, model)
-    sae = OpenSAE(config, model)
+    sae = TopkSAE(config, model)
 
     torch.backends.cudnn.benchmark = True
     sae.train(sampler, model, validation, log=True)

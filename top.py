@@ -6,11 +6,9 @@ from torch.optim import Adam, SGD
 from base import BaseSAE, Loss
 
 
-class OpenSAE(BaseSAE):
+class TopkSAE(BaseSAE):
     """
-    The main difference between this is the loss function.
-    Specifically, it uses the activation * the output norm as the sparsity term.
-    https://transformer-circuits.pub/2024/april-update/index.html#training-saes
+    The TopK SAE by gao et al.
     """
     def __init__(self, config, model):
         super().__init__(config, model)
